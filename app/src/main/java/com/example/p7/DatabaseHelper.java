@@ -132,7 +132,4 @@ import java.util.List;
                     new String[]{String.valueOf(note.getBarcode())});
             db.close();
         }
-
-
-
     }

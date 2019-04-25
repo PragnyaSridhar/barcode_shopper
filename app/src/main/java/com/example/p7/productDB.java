@@ -18,7 +18,8 @@ public class productDB {
                     + COLUMN_NAME + " STRING,"
                     + COLUMN_PRICE + " INTEGER"
                     + ")";
-    public productsDB() {
+    public productDB() {
+
     }
 
 
