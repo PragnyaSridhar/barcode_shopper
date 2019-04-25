@@ -63,14 +63,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return id;
         }
 
-        public productDB getNote(long id) {
+        public productDB getNote(String id) {
             SQLiteDatabase db = this.getReadableDatabase();
 
             Cursor cursor = db.query(productDB.TABLE_NAME,
                     new String[]{productDB.COLUMN_NAME, productDB.COLUMN_PRICE},
                     productDB.COLUMN_BARCODE + "=?",
                     new String[]{String.valueOf(id)}, null, null, null, null);
-
+            //new String[]{String.valueOf(id)}
             if (cursor != null)
                 cursor.moveToFirst();
 

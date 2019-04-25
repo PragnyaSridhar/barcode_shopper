@@ -27,7 +27,7 @@ public class bill extends AppCompatActivity {
     List<product> productList;
     //List<String> barcs;
     ArrayList<String> barcs;
-
+    DatabaseHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,12 @@ public class bill extends AppCompatActivity {
 
         //myref=FirebaseDatabase.getInstance().getReference("barcode-19a3f");
         productList= new ArrayList<>();
+
+        for (String id:barcs) {
+            productDB p;
+            p=helper.getNote(id);
+            productList.add(p);
+        }
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
