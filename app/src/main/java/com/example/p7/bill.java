@@ -25,12 +25,19 @@ public class bill extends AppCompatActivity {
 
 
     List<product> productList;
+    //List<String> barcs;
+    ArrayList<String> barcs;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill);
+
+
+        Bundle bundle = getIntent().getExtras();
+        barcs = (ArrayList<String>) bundle.getStringArrayList("barc");
+
 
         //myref=FirebaseDatabase.getInstance().getReference("barcode-19a3f");
         productList= new ArrayList<>();

@@ -4,22 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/cardview_shadow_end_color"
     tools:context=".bill">
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:background="@color/colorAccent"
-        android:text="TOTAL BILL:"
-        android:textAlignment="center"
-        android:textColor="@color/cast_expanded_controller_progress_text_color"
-        android:textSize="50sp"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="41dp" />
+        android:text="Your Items:"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="50dp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

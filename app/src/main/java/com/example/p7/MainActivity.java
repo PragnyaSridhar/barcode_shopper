@@ -15,19 +15,25 @@ import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     ImageView imageView1;
     TextView textView1;
     BarcodeDetector detector;
+    ArrayList<String> codes;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        codes= new ArrayList<String>();
 
         Button button1=(Button) findViewById(R.id.button1);
         Button button2=(Button) findViewById(R.id.button2);
+        Button button3=(Button) findViewById(R.id.button3);
         imageView1=(ImageView) findViewById(R.id.imageView1);
         textView1= (TextView) findViewById(R.id.textView1);
 
@@ -55,7 +61,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(MainActivity.this,bill.class);
+                //Bundle bundle = new Bundle();
+                intent.putExtra("barc", codes);
+                //intent.putExtras();
                 startActivity(intent);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!textView1.getText().toString().equals("")) {
+                    codes.add(textView1.getText().toString());
+                }
 
             }
         });

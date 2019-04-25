@@ -25,8 +25,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="68dp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="73dp"
         android:background="@android:color/holo_red_dark"
         android:text="Take photo"
         android:textColor="@android:color/background_light"
@@ -46,6 +45,19 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="23dp"
         android:text="" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="73dp"
+        android:layout_marginLeft="220dp"
+        android:text="Add"
+        android:textColor="@android:color/background_light"
+        android:background="@android:color/holo_green_dark"
+        />
 
 </RelativeLayout>
