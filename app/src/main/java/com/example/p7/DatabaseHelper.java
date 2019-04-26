@@ -63,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return id;
         }
 
-        public productDB getNote(String id) {
+        public product getNote(String id) {
             SQLiteDatabase db = this.getReadableDatabase();
 
             Cursor cursor = db.query(productDB.TABLE_NAME,
@@ -78,10 +78,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     cursor.getString(cursor.getColumnIndex("barcode")),
                     cursor.getString(cursor.getColumnIndex("name")),
                     cursor.getDouble(cursor.getColumnIndex("price")));
+            product p= new product();
+            p.barcode=note.getBarcode();
+            p.name=note.getName();
+            p.price=note.getPrice();
+
 
             cursor.close();
 
-            return note;
+            return p;
         }
 
         public List<productDB> getAllNotes() {

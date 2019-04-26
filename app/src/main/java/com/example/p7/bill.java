@@ -41,9 +41,10 @@ public class bill extends AppCompatActivity {
 
         //myref=FirebaseDatabase.getInstance().getReference("barcode-19a3f");
         productList= new ArrayList<>();
+        helper= new DatabaseHelper(bill.this);
 
         for (String id:barcs) {
-            productDB p;
+            product p;
             p=helper.getNote(id);
             productList.add(p);
         }
